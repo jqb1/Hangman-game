@@ -47,11 +47,10 @@ class Draw:
                     # changing guessed char to 0 so it can't be guessed anymore
                     guess_char_list[i] = 0
                     self.underscore_list[i] = input_char
-                    underscore_string = " ".join(self.underscore_list)
 
                 else:
                     pass
-
+            underscore_string = " ".join(self.underscore_list)
             print(underscore_string)
             self.repaint(self.guess)
 

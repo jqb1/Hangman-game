@@ -6,6 +6,7 @@ class Draw:
     word_list = None
     underscore_list = []
     underscore_string = str
+    input_history=[]
     wrong_answer = 0
     game_won = False
     guess = bool
@@ -35,6 +36,9 @@ class Draw:
 
         while not self.game_over:
             input_char = input()
+
+            self.input_history.append(input_char)
+
             if input_char in guess_char_list:
                 self.guess = True
             else:
@@ -47,6 +51,7 @@ class Draw:
                     # changing guessed char to 0 so it can't be guessed anymore
                     guess_char_list[i] = 0
                     self.underscore_list[i] = input_char
+
                     if '_' not in self.underscore_list:
                         self.game_won = True
                 else:
@@ -56,6 +61,7 @@ class Draw:
             print(underscore_string)
             # painting man
             self.repaint(self.guess)
+            print(self.input_history)
 
     def repaint(self, guess):
         print(guess)

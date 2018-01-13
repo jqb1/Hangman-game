@@ -8,7 +8,7 @@ def Main():
 
     level_parser = argparse.ArgumentParser(description="Choosing level")
 
-    level_parser.add_argument('lvl',default=1, help="1-easy, other-hard , default - easy",type=int)
+    level_parser.add_argument('lvl', default=1, help="1-easy, other-hard , default - easy", type=int)
 
     arg = level_parser.parse_args()
     if arg.lvl == 1:
@@ -18,5 +18,6 @@ def Main():
 
     Input(level)
     # draw = Draw()
+
 
 Main()

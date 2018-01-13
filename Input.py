@@ -21,7 +21,7 @@ class Input:
         else:
             try:
                 file = open("words.txt")
-                lines=file.read().splitlines()
+                lines = file.read().splitlines()
                 line = random.choice(lines)
                 return line
             except IOError:

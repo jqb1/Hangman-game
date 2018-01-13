@@ -7,7 +7,7 @@ class Draw:
     underscore_list = []
     underscore_string = str
     wrong_answer = 0
-    game_won = bool
+    game_won = False
     guess = bool
     game_over = bool
     paint = Paint()
@@ -49,7 +49,7 @@ class Draw:
                     self.underscore_list[i] = input_char
                     if '_' not in self.underscore_list:
                         self.game_won = True
-                       # self.game_over = True
+
 
                 else:
                     pass
@@ -63,8 +63,9 @@ class Draw:
         print(guess)
         if guess:
             self.paint.draw(self.wrong_answer)
-        elif self.game_won and self.game_over:
-            self.paint.draw(self.win_stage)
+            if self.game_won:
+                self.paint.draw(self.win_stage)
+                self.game_over = True
         else:
             self.wrong_answer += 1
             self.paint.draw(self.wrong_answer)

@@ -49,8 +49,6 @@ class Draw:
                     self.underscore_list[i] = input_char
                     if '_' not in self.underscore_list:
                         self.game_won = True
-
-
                 else:
                     pass
 

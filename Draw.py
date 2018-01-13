@@ -11,6 +11,7 @@ class Draw:
     guess = bool
     game_over = bool
     paint = Paint()
+    win_stage = 9
 
     game_over = False
 
@@ -47,9 +48,9 @@ class Draw:
                     guess_char_list[i] = 0
                     self.underscore_list[i] = input_char
                     if '_' not in self.underscore_list:
+                        self.game_won = True
+                       # self.game_over = True
 
-                        self.game_over = True
-                        self.game_won =True
                 else:
                     pass
 
@@ -62,13 +63,13 @@ class Draw:
         print(guess)
         if guess:
             self.paint.draw(self.wrong_answer)
+        elif self.game_won and self.game_over:
+            self.paint.draw(self.win_stage)
         else:
             self.wrong_answer += 1
             self.paint.draw(self.wrong_answer)
             if self.wrong_answer >= 8:
                 self.game_over = True
-            # elif self.game_won:
-            #     self.paint.print_win()
 
     def clear_window(self):
         # Clearing window

@@ -17,7 +17,7 @@ def Main():
         else:
             level = "hard"
 
-            Input(level,None)
+        Input(level,None)
     else:
         print()
         Input(0,arg.file)
